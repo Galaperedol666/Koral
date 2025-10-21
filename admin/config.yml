@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/img/kitchens"
+public_folder: "/img/kitchens"
+
+collections:
+  - name: "kitchens"
+    label: "Кухні"
+    folder: "static/data"
+    create: true
+    format: "json"
+    extension: "json"
+    identifier_field: "slug"
+    slug: "{{slug}}"
+    path: "kitchens.json"
+    fields:
+      - { label: "Назва", name: "title", widget: "string" }
+      - { label: "Ціна", name: "price", widget: "number" }
+      - { label: "Опис", name: "description", widget: "text", required: false }
+      - { label: "Зображення", name: "image", widget: "image" }
+      - { label: "Slug", name: "slug", widget: "string" }
